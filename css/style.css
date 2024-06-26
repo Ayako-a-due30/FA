@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/* variables */
+:root {
+  --f1: 100px;
+  --f2: 60px;
+  --f3: 28px;
+  --f4: 24px;
+  --f5: 18px;
+  --f6: 16px;
+  --white: #ffffff;
+  --black: #050507;
+  --gray: #7d7d7d;
+  --myFontFamily: "Source Sans 3", sans-serif;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --f1: 3em;
+    --f2: 2em;
+  }
+}
+.source-sans-3- {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+html {
+  font-family: var(--myFontFamily);
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.eyecatch--text {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+.eyecatch--text p {
+  font-size: var(--f4);
+}
+.eyecatch--text p .eyecatch__strong {
+  font-size: var(--f3);
+}
+
+.phone-menu {
+  display: flex;
+}
+.phone-menu .header-logo {
+  position: absolute;
+  position: fixed;
+  z-index: 30;
+}
+.phone-menu .header-logo img {
+  padding-left: 30px;
+  padding-top: 35px;
+}
+
+/* ハンバーガーメニュー */
+.hamburger-menu {
+  display: block;
+  width: 42px;
+  height: 42px;
+  background-color: var(--black);
+  top: 20;
+  right: 25;
+  z-index: 30;
+  cursor: pointer;
+  transition: 0.4s;
+  position: absolute;
+  position: fixed;
+}
+
+.hamburger-menu:hover {
+  opacity: 0.5;
+}
+
+/* ハンバーガーメニューの線の設定（初期の三本線の状態） */
+.hamburger-menu span {
+  width: 30px;
+  height: 1px;
+  position: absolute;
+  left: 6px;
+  transition: 0.4s ease-in-out;
+}
+
+/* 1本目の線の位置 */
+.hamburger-menu span:nth-child(1) {
+  top: 15px;
+}
+
+/* 2本目の線の位置 */
+.hamburger-menu span:nth-child(2) {
+  top: 21px;
+}
+
+/* 3本目の線の位置 */
+.hamburger-menu span:nth-child(3) {
+  top: 27px;
+}
+
+/* ハンバーガーメニューの線の設定（初期の三本線の状態） */
+.hamburger-menu span {
+  width: 30px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 6px;
+  transition: 0.4s ease-in-out;
+}
+
+/* 1本目の線の位置 */
+.hamburger-menu span:nth-child(1) {
+  top: 15px;
+}
+
+/* 2本目の線の位置 */
+.hamburger-menu span:nth-child(2) {
+  top: 21px;
+}
+
+/* 3本目の線の位置 */
+.hamburger-menu span:nth-child(3) {
+  top: 27px;
+}
+
+/*-------------------------------------------
+  hamburger-menuクラスにactiveクラスが付与されたら、三→×に変化するようにする
+  -------------------------------------------*/
+/* 1本目の線を-45度回転 */
+.hamburger-menu.active span:nth-child(1) {
+  top: 15px;
+  left: 15px;
+  background: #fff;
+  transform: rotate(-45deg);
+}
+
+/* 2本目と3本目は重ねて45度回転 */
+.hamburger-menu.active span:nth-child(2),
+.hamburger-menu.active span:nth-child(3) {
+  top: 15px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+/*-------------------------------------------
+  hamburger-navigationIDにactiveクラスが付与されたら、
+  ナビゲーションメニューを表示させる。
+  -------------------------------------------*/
+#hamburger-navigation {
+  display: none;
+}
+
+#hamburger-navigation.active {
+  background-color: var(--black);
+  display: block;
+  height: 310px;
+  text-align: center;
+  top: 0;
+  position: sticky;
+}
+#hamburger-navigation.active nav {
+  height: 100%;
+}
+
+.header-menu {
+  padding: 80px 0 30px 0;
+}
+.header-menu .header-contents {
+  padding: 10px;
+}
+
+.eventname {
+  vertical-align: middle;
+  font-size: var(--f1);
+  padding: 20px;
+  color: var(--green);
+  text-align: center;
+  height: 100vh;
+}
+
+.catch--imgs {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.catch--imgs img {
+  width: 33.3333333333%;
+}
+
+@media (max-width: 900px) {
+  .catch--imgs {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .catch--imgs img {
+    position: absolute;
+  }
+  .mainvisual1,
+  .mainvisual3 {
+    width: 50%;
+  }
+  .mainvisual2 {
+    width: 100%;
+    z-index: -1;
+    /* 下に配置 */
+  }
+}/*# sourceMappingURL=style.css.map */
